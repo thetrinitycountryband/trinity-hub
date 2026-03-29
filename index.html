@@ -13,6 +13,7 @@
   --text:#f4ecd8;
   --accent:#9f2f2f;
   --accent2:#d7c6a0;
+  --footer-h:58px;
 }
 
 *{box-sizing:border-box}
@@ -21,14 +22,20 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
-  background:linear-gradient(180deg,#0b1015,#101923);
+  background:#0b1015;
   color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap,
+.section{
+  background:#0b1015;
 }
 
 .wrap{
   max-width:560px;
   margin:0 auto;
-  padding:22px 16px 40px;
+  padding:22px 16px calc(40px + var(--footer-h));
 }
 
 .hero{
@@ -45,6 +52,7 @@ body{
 h1{
   font-size:1.4rem;
   margin:6px 0 12px;
+  line-height:1.1;
 }
 
 .sub{
@@ -52,6 +60,7 @@ h1{
   font-size:.82rem;
   text-transform:uppercase;
   font-weight:700;
+  letter-spacing:.04em;
 }
 
 .sub:last-of-type{
@@ -60,8 +69,8 @@ h1{
 
 .btns{
   display:grid;
+  grid-template-columns:1fr 1fr;
   gap:10px;
-  margin-top:6px;
 }
 
 .top-btn{
@@ -73,12 +82,18 @@ h1{
   font-weight:800;
   font-size:1rem;
   cursor:pointer;
-  transition:.2s;
+  transition:background .2s ease,border-color .2s ease,transform .12s ease,box-shadow .2s ease;
+  box-shadow:0 0 0 rgba(0,0,0,0);
 }
 
 .top-btn.active{
   background:var(--accent);
   border-color:var(--accent);
+  box-shadow:0 8px 20px rgba(159,47,47,.22);
+}
+
+.top-btn:active{
+  transform:scale(.985);
 }
 
 .section{
@@ -86,12 +101,14 @@ h1{
   max-height:0;
   overflow:hidden;
   opacity:0;
-  transition:.25s ease;
+  transform:translateY(-8px);
+  transition:max-height .28s ease,opacity .22s ease,transform .22s ease;
 }
 
 .section.active{
   max-height:2000px;
   opacity:1;
+  transform:translateY(0);
 }
 
 .card{
@@ -99,6 +116,7 @@ h1{
   border:1px solid var(--line);
   border-radius:18px;
   overflow:hidden;
+  box-shadow:0 10px 24px rgba(0,0,0,.18);
 }
 
 .item + .item{
@@ -106,12 +124,92 @@ h1{
 }
 
 .hub-link{
-  display:block;
-  padding:18px 10px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:18px 14px;
   text-decoration:none;
   color:var(--text);
   font-weight:800;
   font-size:1.05rem;
+  transition:background .18s ease,transform .12s ease;
+}
+
+.hub-link:hover{
+  background:rgba(255,255,255,.02);
+}
+
+.hub-link:active{
+  transform:scale(.992);
+}
+
+.hub-link .label{
+  display:block;
+  line-height:1.25;
+}
+
+.hub-link .arrow{
+  flex:0 0 auto;
+  color:var(--accent2);
+  font-size:1rem;
+  opacity:.8;
+  transform:translateX(0);
+  transition:transform .18s ease,opacity .18s ease;
+}
+
+.hub-link:hover .arrow{
+  transform:translateX(3px);
+  opacity:1;
+}
+
+.footer{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:20;
+  height:var(--footer-h);
+  background:#0b1015;
+  border-top:1px solid rgba(255,255,255,.08);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 14px;
+}
+
+.footer-inner{
+  width:100%;
+  max-width:560px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-size:.92rem;
+  white-space:nowrap;
+}
+
+.footer a{
+  color:var(--accent2);
+  text-decoration:none;
+  font-weight:700;
+}
+
+.footer span{
+  color:#555;
+}
+
+@media (hover:none){
+  .hub-link:hover{
+    background:transparent;
+  }
+}
+
+@media (max-width:380px){
+  .footer-inner{
+    font-size:.86rem;
+    gap:8px;
+  }
 }
 </style>
 </head>
@@ -121,7 +219,7 @@ h1{
 <div class="wrap">
 
 <section class="hero">
-  <img id="logo" class="logo" src="https://i.imgur.com/GjeDHm8.png" alt="The Trinity Country Band">
+  <img class="logo" src="logo.png" alt="The Trinity Country Band">
 
   <div class="sub">Country Rock • Southern Rock</div>
   <div class="sub">Serra Gaúcha</div>
@@ -129,91 +227,105 @@ h1{
   <h1>The Trinity Country Band</h1>
 
   <div class="btns">
-    <button class="top-btn" data-target="materiais">Materiais</button>
-    <button class="top-btn" data-target="restrito">Sob liberação</button>
-    <button class="top-btn" data-target="contato">Contato</button>
+    <button class="top-btn" data-target="show">Show</button>
+    <button class="top-btn" data-target="midia">Mídia</button>
+    <button class="top-btn" data-target="tecnico">Técnico</button>
+    <button class="top-btn" data-target="contratacao">Contratação</button>
   </div>
 </section>
 
-<section id="materiais" class="section">
-  <div class="card" id="publico"></div>
+<section id="show" class="section">
+  <div class="card" id="showLista"></div>
 </section>
 
-<section id="restrito" class="section">
-  <div class="card" id="restritoLista"></div>
+<section id="midia" class="section">
+  <div class="card" id="midiaLista"></div>
 </section>
 
-<section id="contato" class="section">
-  <div class="card" id="contatos"></div>
+<section id="tecnico" class="section">
+  <div class="card" id="tecnicoLista"></div>
+</section>
+
+<section id="contratacao" class="section">
+  <div class="card" id="contratacaoLista"></div>
 </section>
 
 </div>
 
+<div class="footer">
+  <div class="footer-inner">
+    <a href="https://wa.me/5554999494951?text=Quero%20saber%20mais%20sobre%20o%20show%20da%20Trinity" target="_blank" rel="noopener">WhatsApp</a>
+    <span>•</span>
+    <a href="https://instagram.com/thetrinitycountryband" target="_blank" rel="noopener">Instagram</a>
+    <span>•</span>
+    <a href="mailto:thetrinitycountryband@gmail.com">E-mail</a>
+  </div>
+</div>
+
 <script>
 const HUB = {
+  show: [
+    { nome: "Teaser", link: "https://drive.google.com/file/d/1tKU-rYQbX5DctgjcOWQCFw2c88UWg2LT/view?usp=drivesdk" },
+    { nome: "Sobre a banda", link: "https://drive.google.com/file/d/1a7SfcJf3SRMI8Y1dL5-T-konWxjYya9f/preview" },
+    { nome: "Canal do YouTube", link: "https://youtube.com/@thetrinitycountryband?si=5vrWVkYMwV_D-UYo" },
+    { nome: "Repertório no Spotify", link: "https://open.spotify.com/playlist/6DXoWxqCUIVXHvR1lprHNA" }
+  ],
 
-publico:[
-  {nome:"Teaser",link:"https://drive.google.com/file/d/1tKU-rYQbX5DctgjcOWQCFw2c88UWg2LT/view?usp=drivesdk"},  
-  {nome:"Apresentação da banda",link:"https://drive.google.com/file/d/1a7SfcJf3SRMI8Y1dL5-T-konWxjYya9f/preview"},     {nome:"Logo",link:"https://drive.google.com/file/d/15BjtknL05DZNKR_letXGPMxYLgZLUNXK/view?usp=drivesdk"},
-  {nome:"Fotos oficiais",link:"https://drive.google.com/drive/folders/1jFKuKvDitR-P_kvFqZzqHmyGGcKzYty7"},
-  {nome:"Pasta com Vídeos",link:"https://drive.google.com/drive/folders/15ybuZhL8SEQ4NKHLJRdDUnpmHCWLJkYr"},
-  {nome:"Canal do Youtube",link:"https://youtube.com/@thetrinitycountryband?si=5vrWVkYMwV_D-UYo"},
-  {nome:"Repertório no Spotify",link:"https://open.spotify.com/playlist/6DXoWxqCUIVXHvR1lprHNA"},
-  {nome:"Rider de Hospitalidade",link:"hospitalidade.html"}
-],
+  midia: [
+    { nome: "Logo", link: "https://drive.google.com/file/d/15BjtknL05DZNKR_letXGPMxYLgZLUNXK/view?usp=drivesdk" },
+    { nome: "Fotos oficiais", link: "https://drive.google.com/drive/folders/1jFKuKvDitR-P_kvFqZzqHmyGGcKzYty7" },
+    { nome: "Vídeos completos", link: "https://drive.google.com/drive/folders/15ybuZhL8SEQ4NKHLJRdDUnpmHCWLJkYr" }
+  ],
 
-restrito:[
-  {nome:"Mapa de Palco",link:"https://drive.google.com/file/d/1ummE_1okQ6bwdAMTYCcR9Dqye9bUfRry/view?usp=drivesdk"},
-  {nome:"Material técnico",link:"#"},
-  {nome:"Trilha de Abertura",link:"https://drive.google.com/file/d/1XI9FoySpT7BydxlFHwS_g-rPMMWm5q41/view?usp=drivesdk"},
-  {nome:"Contratos Públicos",link:"#"}
-],
+  tecnico: [
+    { nome: "Mapa de palco", link: "https://drive.google.com/file/d/1ummE_1okQ6bwdAMTYCcR9Dqye9bUfRry/view?usp=drivesdk" },
+    { nome: "Rider técnico", link: "#" },
+    { nome: "Trilha de abertura", link: "https://drive.google.com/file/d/1XI9FoySpT7BydxlFHwS_g-rPMMWm5q41/view?usp=drivesdk" }
+  ],
 
-contato:[
-  {nome:"WhatsApp",link:"https://wa.me/5554999494951?text=Quero%20saber%20mais%20sobre%20o%20show%20da%20Trinity"},
-  {nome:"Instagram",link:"https://instagram.com/thetrinitycountryband"},
-  {nome:"E-mail",link:"mailto:thetrinitycountryband@gmail.com"}
-]
+  contratacao: [
+    { nome: "Rider de hospitalidade", link: "hospitalidade.html" },
+    { nome: "Documentação para contratação", link: "#" }
+  ]
 };
 
-const $ = s => document.querySelector(s);
-const $$ = s => document.querySelectorAll(s);
-
 function item(x){
-return `<div class="item">
-<a class="hub-link" href="${x.link}" target="_blank" rel="noopener">${x.nome}</a>
-</div>`;
+  return `
+    <div class="item">
+      <a class="hub-link" href="${x.link}" target="_blank" rel="noopener">
+        <span class="label">${x.nome}</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  `;
 }
 
-$("#publico").innerHTML = HUB.publico.map(item).join("");
-$("#restritoLista").innerHTML = HUB.restrito.map(item).join("");
-$("#contatos").innerHTML = HUB.contato.map(item).join("");
+document.getElementById("showLista").innerHTML = HUB.show.map(item).join("");
+document.getElementById("midiaLista").innerHTML = HUB.midia.map(item).join("");
+document.getElementById("tecnicoLista").innerHTML = HUB.tecnico.map(item).join("");
+document.getElementById("contratacaoLista").innerHTML = HUB.contratacao.map(item).join("");
 
-const buttons = $$(".top-btn");
-const sections = $$(".section");
+const buttons = document.querySelectorAll(".top-btn");
+const sections = document.querySelectorAll(".section");
 
 let current = null;
 
-buttons.forEach(btn=>{
-btn.onclick = ()=>{
-const id = btn.dataset.target;
+buttons.forEach(btn => {
+  btn.onclick = () => {
+    const id = btn.dataset.target;
 
-if(current === id){
-sections.forEach(s=>s.classList.remove("active"));
-buttons.forEach(b=>b.classList.remove("active"));
-current = null;
-return;
-}
+    if (current === id) {
+      sections.forEach(s => s.classList.remove("active"));
+      buttons.forEach(b => b.classList.remove("active"));
+      current = null;
+      return;
+    }
 
-sections.forEach(s=>s.classList.toggle("active", s.id===id));
-buttons.forEach(b=>b.classList.toggle("active", b===btn));
+    sections.forEach(s => s.classList.toggle("active", s.id === id));
+    buttons.forEach(b => b.classList.toggle("active", b === btn));
 
-current = id;
-
-setTimeout(()=>{
-document.getElementById(id).scrollIntoView({behavior:"smooth"});
-},100);
-};
+    current = id;
+  };
 });
 </script>
 
