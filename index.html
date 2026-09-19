@@ -79,6 +79,15 @@ body{
 .tour-archive li span{color:#b9bbc0;font-size:.85rem;flex:0 0 230px}
 .tour-archive li a{color:var(--accent2);text-align:right;text-underline-offset:4px}
 @media(max-width:760px){.tour-archive li{display:block}.tour-archive li span{display:block;margin-bottom:4px}.tour-archive li a{text-align:left}}
+.video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}
+.video-card{display:block;overflow:hidden;background:#111a23;border:1px solid #32404c;border-radius:12px;text-decoration:none;color:var(--text)}
+.video-image{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0b0e12}
+.video-image img{display:block;width:100%;height:100%;object-fit:cover}
+.video-image::after{content:'▶';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:#a5443f;color:#fff;font-size:1.2rem;box-shadow:0 2px 18px #0009}
+.video-card:hover .video-image img,.video-card:focus-visible .video-image img{transform:scale(1.04)}
+.video-card .video-image img{transition:transform .2s ease}
+.video-copy{padding:17px 18px 20px}.video-copy small{display:block;color:var(--accent2);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem}.video-copy strong{display:block;font-family:Georgia,serif;font-size:1.25rem;line-height:1.2;margin-top:7px}
+@media(max-width:760px){.video-grid{grid-template-columns:1fr}}
 .live-strip{display:flex;align-items:center;justify-content:space-between;gap:24px;background:#3d191c;border-left:4px solid #c75d59;border-radius:4px;padding:22px 25px;margin-top:18px;text-decoration:none;color:var(--text)}
 .live-strip strong{font-family:Georgia,serif;font-size:1.35rem;line-height:1.2;display:block;margin:4px 0}
 .live-strip small{font-size:.9rem;color:#ebc7ba}
@@ -339,13 +348,20 @@ h1{
       <li><span>19/08/2023 · Vale dos Vinhedos</span><a href="https://leouve.com.br/geral/primeira-edicao-do-assados-e-tintos-foi-realizado-neste-sabado-em-bento-goncalves/" target="_blank" rel="noopener">Assados e Tintos ↗</a></li>
       <li><span>11/06/2023 · Bento Gonçalves</span><a href="https://www.expobento.com.br/noticias/um-domingo-para-cevar-o-mate-e-curtir-a-cultura-gaucha-na-31a-expobento" target="_blank" rel="noopener">ExpoBento / Fenavinho ↗</a></li>
       <li><span>22/10/2022 · Garibaldi</span><a href="https://leouve.com.br/geral/trinker-music-festival-acontece-neste-sabado-em-garibaldi/" target="_blank" rel="noopener">Trinker Music Festival ↗</a></li>
-      <li><span>Registro de 2022</span><a href="https://www.youtube.com/watch?v=wND5nwDkJ4w" target="_blank" rel="noopener">Filippita’s Farm · ao vivo ↗</a></li>
     </ul>
   </details>
-  <a class="live-strip" href="https://www.youtube.com/watch?v=TXbyiZtOzk8" target="_blank" rel="noopener" aria-label="Assistir Ramblin’ Man ao vivo no YouTube">
-    <span><small>TRINITY AO VIVO</small><strong>Ramblin’ Man · Allman Brothers Band</strong><small>Veja a banda no palco</small></span>
-    <span class="play" aria-hidden="true">▶</span>
-  </a>
+</section>
+
+<section class="editorial" aria-labelledby="videos-titulo">
+  <div class="eyebrow">Trinity ao vivo</div>
+  <h2 id="videos-titulo">Aperte o play. Sinta o palco.</h2>
+  <p>Três músicas para conhecer o som da banda. Os vídeos abrem no canal da Trinity no YouTube.</p>
+  <div class="video-grid">
+    <a class="video-card" href="https://www.youtube.com/watch?v=TXbyiZtOzk8" target="_blank" rel="noopener" aria-label="Assistir Ramblin’ Man, da Trinity, no YouTube"><div class="video-image"><img src="https://i.ytimg.com/vi/TXbyiZtOzk8/hqdefault.jpg" alt="Vídeo da Trinity tocando Ramblin’ Man ao vivo" loading="lazy" width="480" height="360"></div><div class="video-copy"><small>Allman Brothers Band · ao vivo</small><strong>Ramblin’ Man</strong></div></a>
+    <a class="video-card" href="https://www.youtube.com/watch?v=fRb8UWJ0pO4" target="_blank" rel="noopener" aria-label="Assistir Pretty Little Lie, da Trinity, no YouTube"><div class="video-image"><img src="https://i.ytimg.com/vi/fRb8UWJ0pO4/hqdefault.jpg" alt="Vídeo da Trinity tocando Pretty Little Lie ao vivo" loading="lazy" width="480" height="360"></div><div class="video-copy"><small>Blackberry Smoke · ao vivo</small><strong>Pretty Little Lie</strong></div></a>
+    <a class="video-card" href="https://www.youtube.com/watch?v=QnkFNETnadU" target="_blank" rel="noopener" aria-label="Assistir Trinity, de Franco Micalizzi, pela banda no YouTube"><div class="video-image"><img src="https://i.ytimg.com/vi/QnkFNETnadU/hqdefault.jpg" alt="Vídeo da The Trinity Country Band ao vivo" loading="lazy" width="480" height="360"></div><div class="video-copy"><small>Franco Micalizzi · ao vivo</small><strong>Trinity</strong></div></a>
+  </div>
+  <p><a href="https://www.youtube.com/@thetrinitycountryband" target="_blank" rel="noopener">Explore mais vídeos no canal da Trinity ↗</a></p>
 </section>
 
 <section class="editorial" aria-labelledby="contato-titulo">
