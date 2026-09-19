@@ -64,6 +64,17 @@ body{
 .feature p{margin:0;font-size:.98rem}
 .inline-link{color:var(--accent2);text-underline-offset:3px}
 .evidence{padding-left:20px;line-height:1.9}
+.tour-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px}
+.tour-card{display:flex;flex-direction:column;min-height:245px;background:#111a23;border:1px solid #32404c;padding:22px 20px;border-radius:12px}
+.tour-card .tour-meta{color:var(--accent2);text-transform:uppercase;font-size:.82rem;font-weight:800;letter-spacing:.08em}
+.tour-card h3{color:var(--text);font-family:Georgia,serif;font-size:1.45rem;line-height:1.15;margin:20px 0 10px}
+.tour-card p{font-size:.93rem;line-height:1.5;margin:0 0 20px}
+.tour-card a{color:var(--accent2);text-underline-offset:4px;font-size:.9rem;font-weight:800;margin-top:auto}
+.live-strip{display:flex;align-items:center;justify-content:space-between;gap:24px;background:#3d191c;border-left:4px solid #c75d59;border-radius:4px;padding:22px 25px;margin-top:18px;text-decoration:none;color:var(--text)}
+.live-strip strong{font-family:Georgia,serif;font-size:1.35rem;line-height:1.2;display:block;margin:4px 0}
+.live-strip small{font-size:.9rem;color:#ebc7ba}
+.live-strip .play{display:grid;place-items:center;min-width:45px;height:45px;border:1px solid #ebc7ba;border-radius:50%;font-size:1.1rem}
+@media(max-width:760px){.tour-grid{grid-template-columns:1fr}.tour-card{min-height:0}.tour-card h3{margin-top:12px}.live-strip{padding:18px}.live-strip strong{font-size:1.15rem}}
 .cta{display:inline-block;background:var(--accent);color:white;text-decoration:none;font-weight:800;padding:15px 20px;border-radius:8px;margin-top:10px}
 @media(max-width:600px){.grid{grid-template-columns:1fr}.editorial{padding-top:32px}}
 
@@ -295,12 +306,32 @@ h1{
 
 <section class="editorial" aria-labelledby="trajetoria-titulo">
   <div class="eyebrow">Na estrada</div>
-  <h2 id="trajetoria-titulo">Dos pubs aos eventos da região.</h2>
-  <p>A trajetória da Trinity aparece em programações públicas. Veja um registro da Secretaria de Turismo de Bento Gonçalves e ouça a banda ao vivo.</p>
-  <ul class="evidence">
-    <li><a class="inline-link" href="https://bento.tur.br/evento/bar-bacon-1o-domingo-country/" target="_blank" rel="noopener">Turismo de Bento Gonçalves — Domingo Country no Bar Bacon</a></li>
-    <li><a class="inline-link" href="https://www.youtube.com/watch?v=TXbyiZtOzk8" target="_blank" rel="noopener">Ramblin’ Man — The Trinity Country Band ao vivo</a></li>
-  </ul>
+  <h2 id="trajetoria-titulo">Palcos que fazem parte da história.</h2>
+  <p>Festival, rua e bar: a Trinity leva o Country Rock e o Southern Rock a públicos diferentes sem trocar de pele. Estas apresentações constam em programações publicadas por organizadores e veículos da região.</p>
+  <div class="tour-grid">
+    <article class="tour-card">
+      <div class="tour-meta">04/07/2026 · Carlos Barbosa</div>
+      <h3>FestiQueijo</h3>
+      <p>A Trinity integrou a programação musical da festa gastronômica da Serra Gaúcha.</p>
+      <a href="https://www.raizesdaserra.com.br/eventos/carlosbarbosa/132/festiqueijo-2026/" target="_blank" rel="noopener">Ver programação ↗</a>
+    </article>
+    <article class="tour-card">
+      <div class="tour-meta">Março de 2025 · Bento Gonçalves</div>
+      <h3>Festival da Rua Coberta</h3>
+      <p>O nome da Trinity entrou no line-up divulgado pela Secretaria Municipal de Cultura.</p>
+      <a href="https://www.instagram.com/p/DHOHoraRQKH/" target="_blank" rel="noopener">Ver divulgação ↗</a>
+    </article>
+    <article class="tour-card">
+      <div class="tour-meta">05/04/2026 · Bento Gonçalves</div>
+      <h3>Domingo Country</h3>
+      <p>Show no Bar Bacon registrado na agenda da Secretaria Municipal de Turismo.</p>
+      <a href="https://bento.tur.br/evento/bar-bacon-1o-domingo-country/" target="_blank" rel="noopener">Ver agenda ↗</a>
+    </article>
+  </div>
+  <a class="live-strip" href="https://www.youtube.com/watch?v=TXbyiZtOzk8" target="_blank" rel="noopener" aria-label="Assistir Ramblin’ Man ao vivo no YouTube">
+    <span><small>TRINITY AO VIVO</small><strong>Ramblin’ Man · Allman Brothers Band</strong><small>Veja a banda no palco</small></span>
+    <span class="play" aria-hidden="true">▶</span>
+  </a>
 </section>
 
 <section class="editorial" aria-labelledby="contato-titulo">
