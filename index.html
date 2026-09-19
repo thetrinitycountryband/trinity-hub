@@ -70,6 +70,15 @@ body{
 .tour-card h3{color:var(--text);font-family:Georgia,serif;font-size:1.45rem;line-height:1.15;margin:20px 0 10px}
 .tour-card p{font-size:.93rem;line-height:1.5;margin:0 0 20px}
 .tour-card a{color:var(--accent2);text-underline-offset:4px;font-size:.9rem;font-weight:800;margin-top:auto}
+.tour-archive{margin-top:18px;background:#111a23;border:1px solid #32404c;border-radius:12px;padding:0 22px}
+.tour-archive summary{cursor:pointer;color:var(--accent2);font-weight:800;padding:19px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.tour-archive summary::-webkit-details-marker{display:none}
+.tour-archive[open] summary span{transform:rotate(45deg)}
+.tour-archive ul{list-style:none;padding:0;margin:0 0 12px}
+.tour-archive li{display:flex;align-items:baseline;gap:18px;justify-content:space-between;padding:13px 0;border-top:1px solid #32404c}
+.tour-archive li span{color:#b9bbc0;font-size:.85rem;flex:0 0 230px}
+.tour-archive li a{color:var(--accent2);text-align:right;text-underline-offset:4px}
+@media(max-width:760px){.tour-archive li{display:block}.tour-archive li span{display:block;margin-bottom:4px}.tour-archive li a{text-align:left}}
 .live-strip{display:flex;align-items:center;justify-content:space-between;gap:24px;background:#3d191c;border-left:4px solid #c75d59;border-radius:4px;padding:22px 25px;margin-top:18px;text-decoration:none;color:var(--text)}
 .live-strip strong{font-family:Georgia,serif;font-size:1.35rem;line-height:1.2;display:block;margin:4px 0}
 .live-strip small{font-size:.9rem;color:#ebc7ba}
@@ -305,59 +314,34 @@ h1{
 </section>
 
 <section class="editorial" aria-labelledby="trajetoria-titulo">
-  <div class="eyebrow">Na estrada</div>
+  <div class="eyebrow">Na estrada · 2019—2026</div>
   <h2 id="trajetoria-titulo">Palcos que fazem parte da história.</h2>
-  <p>Da festa da cidade ao palco perto do público: uma seleção de apresentações e registros da Trinity, com links para a programação ou para o material publicado.</p>
+  <p>Festivais, encontros de motos, feiras e casas de show: uma seleção da trajetória documentada da Trinity. Cada registro leva à programação, à cobertura ou ao vídeo publicado.</p>
   <div class="tour-grid">
-    <article class="tour-card">
-      <div class="tour-meta">02/08/2026 · Bento Gonçalves</div>
-      <h3>Bar Bacon Honky Tonk</h3>
-      <p>Outra data da Trinity no espaço, divulgada no calendário turístico da cidade.</p>
-      <a href="https://bento.tur.br/calendario-de-programacoes-diarias/2026-08-02/" target="_blank" rel="noopener">Ver calendário ↗</a>
-    </article>
-    <article class="tour-card">
-      <div class="tour-meta">04/07/2026 · Carlos Barbosa</div>
-      <h3>FestiQueijo</h3>
-      <p>A Trinity integrou a programação musical da festa gastronômica da Serra Gaúcha.</p>
-      <a href="https://www.raizesdaserra.com.br/eventos/carlosbarbosa/132/festiqueijo-2026/" target="_blank" rel="noopener">Ver programação ↗</a>
-    </article>
-    <article class="tour-card">
-      <div class="tour-meta">22/05/2026 · Bento Gonçalves</div>
-      <h3>Noite Country</h3>
-      <p>O Bar Bacon anunciou a noite com a Trinity em sua programação.</p>
-      <a href="https://www.instagram.com/reel/DYnGpNVolVM/" target="_blank" rel="noopener">Ver anúncio ↗</a>
-    </article>
-    <article class="tour-card">
-      <div class="tour-meta">05/04/2026 · Bento Gonçalves</div>
-      <h3>Domingo Country</h3>
-      <p>Show no Bar Bacon registrado na agenda da Secretaria Municipal de Turismo.</p>
-      <a href="https://bento.tur.br/evento/bar-bacon-1o-domingo-country/" target="_blank" rel="noopener">Ver agenda ↗</a>
-    </article>
-    <article class="tour-card">
-      <div class="tour-meta">Outubro de 2025 · Paraí</div>
-      <h3>Inauguração do Rancho</h3>
-      <p>A banda compartilhou o registro da noite de inauguração do espaço.</p>
-      <a href="https://www.facebook.com/thetrinitycountryband/posts/que-noite-meus-amigos-ontem-tivemos-a-honra-de-participar-da-inaugura%C3%A7%C3%A3o-do-ranc/810483011731700/" target="_blank" rel="noopener">Ver registro ↗</a>
-    </article>
-    <article class="tour-card">
-      <div class="tour-meta">12/04/2025 · Casa Adoma</div>
-      <h3>Country Rock na Casa Adoma</h3>
-      <p>Apresentação anunciada pela Trinity para a tarde de sábado.</p>
-      <a href="https://www.facebook.com/thetrinitycountryband/posts/s%C3%A1bado-de-fogo-e-viol%C3%A3o-na-casa-adomasabe-aquele-lugar-que-%C3%A9-casinha-no-nome-e-l/667995162647153/" target="_blank" rel="noopener">Ver anúncio ↗</a>
-    </article>
-    <article class="tour-card">
-      <div class="tour-meta">Março de 2025 · Bento Gonçalves</div>
-      <h3>Festival da Rua Coberta</h3>
-      <p>O nome da Trinity entrou no line-up divulgado pela Secretaria Municipal de Cultura.</p>
-      <a href="https://www.instagram.com/p/DHOHoraRQKH/" target="_blank" rel="noopener">Ver divulgação ↗</a>
-    </article>
-    <article class="tour-card">
-      <div class="tour-meta">Registro de 2022</div>
-      <h3>Filippita’s Farm</h3>
-      <p>Um registro da banda ao vivo, tocando “A New Life”, do The Marshall Tucker Band.</p>
-      <a href="https://www.youtube.com/watch?v=wND5nwDkJ4w" target="_blank" rel="noopener">Assistir ao vídeo ↗</a>
-    </article>
+    <article class="tour-card"><div class="tour-meta">04/07/2026 · Carlos Barbosa</div><h3>FestiQueijo</h3><p>A Trinity integrou a programação musical do 34º FestiQueijo.</p><a href="https://www.festiqueijo.com.br/noticias/10-34o-festiqueijo-destaca-shows-e-programacao-diversificada-no-segundo-final-de-semana/" target="_blank" rel="noopener">Ver programação ↗</a></article>
+    <article class="tour-card"><div class="tour-meta">04/06/2026 · Bento Gonçalves</div><h3>ExpoBento &amp; Fenavinho</h3><p>A banda entrou na programação de abertura da edição de 2026, depois de integrar o Palco Fenavinho em 2023.</p><a href="https://serranossa.com.br/expobento-e-fenavinho-comecam-nesta-quinta-feira-em-bento-goncalves/" target="_blank" rel="noopener">Ver cobertura ↗</a></article>
+    <article class="tour-card"><div class="tour-meta">07/03/2026 · Monte Belo do Sul</div><h3>Carranca Custom Fest</h3><p>Retorno da banda ao festival custom da cidade.</p><a href="https://motofestbrasil.com.br/motofest/carranca-custom-fest" target="_blank" rel="noopener">Ver programação ↗</a></article>
+    <article class="tour-card"><div class="tour-meta">23/03/2025 · Bento Gonçalves</div><h3>Festival da Rua Coberta</h3><p>Show na programação municipal, com registro ao vivo publicado pela banda.</p><a href="https://www.bentogoncalves.rs.gov.br/festival-da-rua-coberta-ocorre-no-proximo-final-de-semana/" target="_blank" rel="noopener">Ver programação ↗</a></article>
+    <article class="tour-card"><div class="tour-meta">11/02/2023 · Carlos Barbosa</div><h3>Harley’s Day</h3><p>A Trinity fez parte da programação oficial da 7ª edição do encontro.</p><a href="https://www.carlosbarbosa.rs.gov.br/noticias/harley-s-day-tera-sua-7a-edicao-nesta-sexta-feira-e-sabado" target="_blank" rel="noopener">Ver programação ↗</a></article>
+    <article class="tour-card"><div class="tour-meta">29/09/2019 · Bento Gonçalves</div><h3>BAH BBQ</h3><p>Um dos primeiros palcos da banda, registrado em reportagem publicada após o evento.</p><a href="https://leouve.com.br/comportamento/churrasco-sol-e-musica-bah-bbq-reune-mais-de-12-mil-pessoas-em-bento/" target="_blank" rel="noopener">Ler reportagem ↗</a></article>
   </div>
+  <details class="tour-archive">
+    <summary>Ver mais apresentações e registros <span aria-hidden="true">＋</span></summary>
+    <ul>
+      <li><span>02/08/2026 · Bento Gonçalves</span><a href="https://bento.tur.br/calendario-de-programacoes-diarias/2026-08-02/" target="_blank" rel="noopener">Bar Bacon Honky Tonk ↗</a></li>
+      <li><span>22/05/2026 · Bento Gonçalves</span><a href="https://www.instagram.com/reel/DYnGpNVolVM/" target="_blank" rel="noopener">Noite Country no Bar Bacon ↗</a></li>
+      <li><span>05/04/2026 · Bento Gonçalves</span><a href="https://bento.tur.br/evento/bar-bacon-1o-domingo-country/" target="_blank" rel="noopener">Domingo Country ↗</a></li>
+      <li><span>Outubro de 2025 · Paraí</span><a href="https://www.facebook.com/thetrinitycountryband/posts/que-noite-meus-amigos-ontem-tivemos-a-honra-de-participar-da-inaugura%C3%A7%C3%A3o-do-ranc/810483011731700/" target="_blank" rel="noopener">Inauguração do Rancho ↗</a></li>
+      <li><span>22/08/2025 · Santa Maria</span><a href="https://www.santamaria.rs.gov.br/arquivos/baixar-arquivo/conteudo/D18-3910.pdf" target="_blank" rel="noopener">Moto Garage · agenda municipal ↗</a></li>
+      <li><span>12/04/2025 · Casa Adoma</span><a href="https://www.facebook.com/thetrinitycountryband/posts/s%C3%A1bado-de-fogo-e-viol%C3%A3o-na-casa-adomasabe-aquele-lugar-que-%C3%A9-casinha-no-nome-e-l/667995162647153/" target="_blank" rel="noopener">Country Rock na Casa Adoma ↗</a></li>
+      <li><span>17/12/2023 · Bento Gonçalves</span><a href="https://leouve.com.br/geral/1a-edicao-do-denver-bbq-festival-ocorre-neste-domingo-17-em-bento-goncalves/" target="_blank" rel="noopener">Denver BBQ Festival ↗</a></li>
+      <li><span>08/12/2023 · Garibaldi</span><a href="https://www.nbnoticias.com.br/noticia/72049/natal-borbulhante-2023-confira-a-programacao-para-o-final-de-semana" target="_blank" rel="noopener">Natal Borbulhante ↗</a></li>
+      <li><span>19/08/2023 · Vale dos Vinhedos</span><a href="https://leouve.com.br/geral/primeira-edicao-do-assados-e-tintos-foi-realizado-neste-sabado-em-bento-goncalves/" target="_blank" rel="noopener">Assados e Tintos ↗</a></li>
+      <li><span>11/06/2023 · Bento Gonçalves</span><a href="https://www.expobento.com.br/noticias/um-domingo-para-cevar-o-mate-e-curtir-a-cultura-gaucha-na-31a-expobento" target="_blank" rel="noopener">ExpoBento / Fenavinho ↗</a></li>
+      <li><span>22/10/2022 · Garibaldi</span><a href="https://leouve.com.br/geral/trinker-music-festival-acontece-neste-sabado-em-garibaldi/" target="_blank" rel="noopener">Trinker Music Festival ↗</a></li>
+      <li><span>Registro de 2022</span><a href="https://www.youtube.com/watch?v=wND5nwDkJ4w" target="_blank" rel="noopener">Filippita’s Farm · ao vivo ↗</a></li>
+    </ul>
+  </details>
   <a class="live-strip" href="https://www.youtube.com/watch?v=TXbyiZtOzk8" target="_blank" rel="noopener" aria-label="Assistir Ramblin’ Man ao vivo no YouTube">
     <span><small>TRINITY AO VIVO</small><strong>Ramblin’ Man · Allman Brothers Band</strong><small>Veja a banda no palco</small></span>
     <span class="play" aria-hidden="true">▶</span>
