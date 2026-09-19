@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thetrinitycountryband.github.io/trinity-hub/sitemap.xml
