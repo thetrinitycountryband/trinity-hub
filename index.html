@@ -90,6 +90,13 @@ body{
 .tour-archive li a{color:var(--accent2);text-align:right;text-underline-offset:4px}
 @media(max-width:760px){.tour-archive li{display:block}.tour-archive li span{display:block;margin-bottom:4px}.tour-archive li a{text-align:left}}
 .tour-venues{margin-top:18px;padding:24px;background:#111a23;border-left:4px solid #b88565;border-radius:4px}.tour-venues h3{font-family:Georgia,serif;color:var(--text);font-size:1.4rem;margin:0 0 8px}.tour-venues p{margin:0;line-height:1.7}
+.agenda-list{list-style:none;margin:24px 0 0;padding:0;border-top:1px solid var(--line)}
+.agenda-list li{display:grid;grid-template-columns:125px 1fr;gap:18px;align-items:center;padding:19px 0;border-bottom:1px solid var(--line)}
+.agenda-list time{font-weight:800;color:var(--accent2);font-size:1.1rem}
+.agenda-list strong{display:block;font-family:Georgia,serif;font-size:1.25rem;color:var(--text)}
+.agenda-list span{display:block;color:#d0ccc4;margin-top:4px}
+.agenda-note{font-size:.9rem!important;color:#bbb6ab!important;margin-top:16px}
+@media(max-width:600px){.agenda-list li{grid-template-columns:1fr;gap:5px}}
 .video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}
 .video-card{display:block;overflow:hidden;background:#111a23;border:1px solid #32404c;border-radius:12px;text-decoration:none;color:var(--text)}
 .video-image{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0b0e12}
@@ -333,6 +340,18 @@ h1{
   </div>
 </section>
 
+<section class="editorial" id="agenda" aria-labelledby="agenda-titulo">
+  <div class="eyebrow">Próximos shows</div>
+  <h2 id="agenda-titulo">Agenda Trinity</h2>
+  <p>Encontre a banda nos próximos palcos divulgados.</p>
+  <ul class="agenda-list">
+    <li><time datetime="2026-10-11">11 OUT 2026</time><div><strong>Expofest Ijuí</strong><span>Ijuí · RS</span></div></li>
+    <li><time datetime="2026-10-31">31 OUT 2026</time><div><strong>Harleyluia Festival</strong><span>Passo Fundo · RS</span></div></li>
+  </ul>
+  <p class="agenda-note">Programação sujeita a alterações pelos organizadores. Novas datas são divulgadas no Instagram da banda.</p>
+  <a class="cta" href="https://www.instagram.com/thetrinitycountryband/" target="_blank" rel="noopener">Ver agenda no Instagram ↗</a>
+</section>
+
 <section class="editorial" aria-labelledby="trajetoria-titulo">
   <div class="eyebrow">Na estrada · 2019—2026</div>
   <h2 id="trajetoria-titulo">Palcos que fazem parte da história.</h2>
@@ -360,10 +379,6 @@ h1{
   <div class="tour-venues">
     <h3>Casas e aberturas no caminho</h3>
     <p>Texas Country Bar, em Passo Fundo · Bar Bacon Honky Tonk, no Vale dos Vinhedos · Vila Country do Stone Hall Garden, em Farroupilha · Pinga Fogo, em Bento Gonçalves · Sabrage Jardim e Gastronomia, no Vale dos Vinhedos · Blauth Bier, em Farroupilha · LAB Experiências, em Sobradinho · Casa Giordani.</p>
-  </div>
-  <div class="tour-venues">
-    <h3>Próximos palcos confirmados</h3>
-    <p>11/10/2026 · Expofest, Ijuí &nbsp;·&nbsp; 31/10/2026 · Harleyluia Festival, Passo Fundo. Datas futuras da agenda da banda; programação sujeita a atualização pelos organizadores.</p>
   </div>
 </section>
 
