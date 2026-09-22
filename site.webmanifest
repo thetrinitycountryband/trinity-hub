@@ -1,0 +1,17 @@
+{
+  "name": "The Trinity Country Band",
+  "short_name": "The Trinity",
+  "description": "Site oficial da The Trinity Country Band.",
+  "start_url": "/trinity-hub/",
+  "scope": "/trinity-hub/",
+  "display": "standalone",
+  "background_color": "#0b1015",
+  "theme_color": "#0b1015",
+  "icons": [
+    {
+      "src": "Logo.png",
+      "sizes": "1920x1920",
+      "type": "image/png"
+    }
+  ]
+}
